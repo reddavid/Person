@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "person-210aa": {
+      "hosting": {
+        "Person": [
+          "person-210aa"
+        ]
+      }
+    }
+  }
+}

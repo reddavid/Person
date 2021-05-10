@@ -1,0 +1,22 @@
+<div class="container">
+  <mat-form-field>
+    <input matInput [(ngModel)]="editVezeteknev" placeholder="Vezetéknév">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="editKeresztnev" placeholder="Keresztnév">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="editTelefonszam" placeholder="Telefonszám">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="editNem" placeholder="Nem">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="editSzuletesiDatum" placeholder="Születési dátum">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="editLakhely" placeholder="Lakhely">
+  </mat-form-field>
+
+  <button mat-raised-button (click)="updatePerson()">Szerkesztés</button>
+</div>

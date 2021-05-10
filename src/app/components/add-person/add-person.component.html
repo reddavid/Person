@@ -1,0 +1,22 @@
+<div class="container">
+  <mat-form-field>
+    <input matInput [(ngModel)]="addVezeteknev" placeholder="Vezetéknév">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="addKeresztnev" placeholder="Keresztnév">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="addTelefonszam" placeholder="Telefonszám">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="addNem" placeholder="Nem">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="addSzuletesiDatum" placeholder="Születési dátum">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput [(ngModel)]="addLakhely" placeholder="Lakhely">
+  </mat-form-field>
+
+  <button mat-raised-button (click)="addNew()">Hozzáadd</button>
+</div>
