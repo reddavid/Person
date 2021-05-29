@@ -10,8 +10,7 @@ import {Person} from '../../model/person';
 })
 export class AddPersonComponent {
 
-  public addVezeteknev: string;
-  public addKeresztnev: string;
+  public addNev: string;
   public addTelefonszam: string;
   public addNem: string;
   public addSzuletesiDatum: string;
@@ -25,8 +24,7 @@ export class AddPersonComponent {
   }
 
   addNew(): void {
-    this.newPerson = new Person(this.addVezeteknev, this.addKeresztnev,
-      this.addTelefonszam, this.addNem, this.addSzuletesiDatum, this.addLakhely);
+    this.newPerson = new Person(this.addNev, this.addTelefonszam, this.addNem, this.addSzuletesiDatum, this.addLakhely);
 
     this.afs.collection('Person').add(Object.assign({}, this.newPerson)).then(() => {
       console.log('Document successfully added!');

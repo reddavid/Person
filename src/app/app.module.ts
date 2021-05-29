@@ -19,13 +19,23 @@ import {environment} from '../environments/environment';
 import { EditPersonComponent } from './components/edit-person/edit-person.component';
 import {FormsModule} from '@angular/forms';
 import { AddPersonComponent } from './components/add-person/add-person.component';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './components/home/home.component';
+import { ListPersonComponent } from './components/list-person/list-person.component';
+import { CreatorComponent } from './components/creator/creator.component';
+import {MatCardModule} from '@angular/material/card';
+import {RouterModule} from '@angular/router';
+import {MatMenuModule} from '@angular/material/menu';
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonComponent,
     EditPersonComponent,
-    AddPersonComponent
+    AddPersonComponent,
+    HomeComponent,
+    ListPersonComponent,
+    CreatorComponent
   ],
   imports: [
     BrowserModule,
@@ -37,10 +47,16 @@ import { AddPersonComponent } from './components/add-person/add-person.component
     MatInputModule,
     MatIconModule,
     MatSortModule,
+    MatCardModule,
     MatTableModule,
     MatToolbarModule,
     MatPaginatorModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
+    RouterModule,
+    BrowserModule,
+    FormsModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent],

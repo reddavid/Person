@@ -1,75 +1,25 @@
 <div class="container">
-  <mat-toolbar>
+  <mat-toolbar  color="primary">
       <span class="fill-remaining-space"></span>
-      <span>FHIR Person</span>
+      <span>Person</span>
       <span class="fill-remaining-space"></span>
+    <button mat-button [routerLink]="'/'">
+      <mat-icon>scatter_plot</mat-icon>
+      Üres oldal
+    </button>
+    <button mat-button [routerLink]="'/home'">
+      <mat-icon>house</mat-icon>
+      Főoldal
+    </button>
+    <button mat-button [routerLink]="'/list-person'">
+      <mat-icon>person</mat-icon>
+      Személyek
+    </button>
+    <button mat-button [routerLink]="'/creator'">
+      <mat-icon>fingerprint</mat-icon>
+      Készítő
+    </button>
   </mat-toolbar>
 </div>
-
-<div class="example-container mat-elevation-z8">
-  <div class="example-header">
-    <mat-form-field>
-      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Keresés">
-    </mat-form-field>
-    <button mat-raised-button color="primary" (click)="openAddDialog()"><mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>Új személy felvétele</button>
-  </div>
-
-  <mat-table #table [dataSource]="dataSource" matSort [trackBy]="trackByUid" class="animate">
-    <ng-container matColumnDef="id">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> # </mat-header-cell>
-      <mat-cell *matCellDef="let item"> {{ item.id }} </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="vezeteknev">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Vezetéknév</mat-header-cell>
-      <mat-cell *matCellDef="let item"> {{ item.vezeteknev }} </mat-cell>
-    </ng-container>
-
-
-    <ng-container matColumnDef="keresztnev">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Keresztnév</mat-header-cell>
-      <mat-cell *matCellDef="let item"> {{ item.keresztnev }} </mat-cell>
-    </ng-container>
-
-
-    <ng-container matColumnDef="telefonszam">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Telefonszám</mat-header-cell>
-      <mat-cell *matCellDef="let item"> {{ item.telefonszam }} </mat-cell>
-    </ng-container>
-
-
-    <ng-container matColumnDef="nem">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Nem</mat-header-cell>
-      <mat-cell *matCellDef="let item"> {{ item.nem }} </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="szuletesidatum">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Születési dátum</mat-header-cell>
-      <mat-cell *matCellDef="let item"> {{ item.szuletesidatum }} </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="lakhely">
-      <mat-header-cell *matHeaderCellDef mat-sort-header>Lakhely</mat-header-cell>
-      <mat-cell *matCellDef="let item"> {{ item.lakhely }} </mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="actions">
-      <mat-header-cell *matHeaderCellDef>Műveletek</mat-header-cell>
-
-      <mat-cell *matCellDef="let item">
-        <button mat-icon-button color="primary" (click)="openEditDialog(item)">
-          <mat-icon aria-label="Edit">edit</mat-icon>
-        </button>
-
-        <button mat-icon-button color="primary" (click)="deleteUser(item)">
-          <mat-icon aria-label="Delete">delete</mat-icon>
-        </button>
-      </mat-cell>
-    </ng-container>
-
-
-    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: displayedColumns;" class="animate"></mat-row>
-  </mat-table>
-</div>
+<router-outlet></router-outlet>
 

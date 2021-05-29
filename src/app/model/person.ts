@@ -1,21 +1,18 @@
 export class Person {
   id: number;
-  vezeteknev: string;
-  keresztnev: string;
-  telefonszam: string;
-  nem: string;
-  szuletesidatum: string;
-  lakhely: string;
+  name: string;
+  telecom: string;
+  gender: string;
+  birthdate: string;
+  address: string;
 
 
-  constructor(vezeteknev: string, keresztnev: string,
-              telefonszam: string, nem: string, szuletesidatum: string, lakhely: string) {
-    this.vezeteknev = vezeteknev;
-    this.keresztnev = keresztnev;
-    this.telefonszam = telefonszam;
-    this.nem = nem;
-    this.szuletesidatum = szuletesidatum;
-    this.lakhely = lakhely;
+  constructor(name: string, telecom: string, gender: string, birthdate: string, address: string) {
+    this.name = name;
+    this.telecom = telecom;
+    this.gender = gender;
+    this.birthdate = birthdate;
+    this.address = address;
   }
 
 }

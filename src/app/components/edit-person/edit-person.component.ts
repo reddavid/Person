@@ -10,8 +10,7 @@ import {Person} from '../../model/person';
 })
 export class EditPersonComponent {
 
-  public editVezeteknev: string;
-  public editKeresztnev: string;
+  public editNev: string;
   public editTelefonszam: string;
   public editNem: string;
   public editSzuletesiDatum: string;
@@ -21,22 +20,20 @@ export class EditPersonComponent {
     private afs: AngularFirestore,
     public dialogRef: MatDialogRef<EditPersonComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {
-    this.editVezeteknev = data.vezeteknev;
-    this.editKeresztnev = data.keresztnev;
-    this.editTelefonszam = data.telefonszam;
-    this.editNem = data.nem;
-    this.editSzuletesiDatum = data.szuletesidatum;
-    this.editLakhely = data.lakhely;
+    this.editNev = data.name;
+    this.editTelefonszam = data.telecom;
+    this.editNem = data.gender;
+    this.editSzuletesiDatum = data.birthdate;
+    this.editLakhely = data.address;
   }
 
   updatePerson(): void {
     this.afs.collection('Person').doc(this.data.id).set({
-      vezeteknev: this.editVezeteknev,
-      keresztnev: this.editKeresztnev,
-      telefonszam: this.editTelefonszam,
-      nem: this.editNem,
-      szuletesidatum: this.editSzuletesiDatum,
-      lakhely: this.editLakhely
+      name: this.editNev,
+      telecom: this.editTelefonszam,
+      gender: this.editNem,
+      birthdate: this.editSzuletesiDatum,
+      address: this.editLakhely
     }).then(() => {
       console.log('Document successfully updated!');
     }).catch((error) => {
