@@ -1,0 +1,12 @@
+<h1>Elérhető menük a toolbárból</h1>
+<mat-card class="item" *ngFor="let item of cardLists">
+  <mat-card-header>{{item.name}}</mat-card-header>
+  <div *ngIf="item.name.includes('ő'); else other">
+    <img [src]="item.img" alt="pluto" height="8%" width="8%">
+  </div>
+  <ng-template #other>
+    <img [src]="img2" alt="mickey" height="5%" width="5%">
+  </ng-template>
+</mat-card>
+
+

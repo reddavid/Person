@@ -1,0 +1,59 @@
+<div class="example-container mat-elevation-z8">
+  <div class="example-header">
+    <mat-form-field>
+      <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Keresés">
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="openAddDialog()"><mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>Új személy felvétele</button>
+  </div>
+
+  <mat-table #table [dataSource]="dataSource" matSort [trackBy]="trackByUid" class="animate">
+    <ng-container matColumnDef="id">
+      <mat-header-cell *matHeaderCellDef mat-sort-header> # </mat-header-cell>
+      <mat-cell *matCellDef="let item"> {{ item.id }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Név</mat-header-cell>
+      <mat-cell *matCellDef="let item"> {{ item.name }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="telecom">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Telefonszám</mat-header-cell>
+      <mat-cell *matCellDef="let item"> {{ item.telecom }} </mat-cell>
+    </ng-container>
+
+
+    <ng-container matColumnDef="gender">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Nem</mat-header-cell>
+      <mat-cell *matCellDef="let item"> {{ item.gender }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="birthdate">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Születési dátum</mat-header-cell>
+      <mat-cell *matCellDef="let item"> {{ item.birthdate }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="address">
+      <mat-header-cell *matHeaderCellDef mat-sort-header>Lakhely</mat-header-cell>
+      <mat-cell *matCellDef="let item"> {{ item.address }} </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="actions">
+      <mat-header-cell *matHeaderCellDef>Műveletek</mat-header-cell>
+
+      <mat-cell *matCellDef="let item">
+        <button mat-icon-button color="primary" (click)="openEditDialog(item)">
+          <mat-icon aria-label="Edit">edit</mat-icon>
+        </button>
+
+        <button mat-icon-button color="primary" (click)="deleteUser(item)">
+          <mat-icon aria-label="Delete">delete</mat-icon>
+        </button>
+      </mat-cell>
+    </ng-container>
+
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;" class="animate"></mat-row>
+  </mat-table>
+</div>
