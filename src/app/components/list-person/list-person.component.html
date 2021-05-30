@@ -3,12 +3,19 @@
     <mat-form-field>
       <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Keresés">
     </mat-form-field>
-    <button mat-raised-button color="primary" (click)="openAddDialog()"><mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>Új személy felvétele</button>
+    <button mat-raised-button color="primary" (click)="openAddDialog()">
+      <mat-icon aria-label="Example icon-button with a heart icon">add</mat-icon>
+      Új személy felvétele
+    </button>&nbsp;
+    <button  mat-raised-button color="primary" (click)="logout()">
+      <mat-icon>logout</mat-icon>
+      Kijelentkezés
+    </button>
   </div>
 
   <mat-table #table [dataSource]="dataSource" matSort [trackBy]="trackByUid" class="animate">
     <ng-container matColumnDef="id">
-      <mat-header-cell *matHeaderCellDef mat-sort-header> # </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> #</mat-header-cell>
       <mat-cell *matCellDef="let item"> {{ item.id }} </mat-cell>
     </ng-container>
 

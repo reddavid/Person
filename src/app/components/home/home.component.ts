@@ -19,7 +19,7 @@ export class HomeComponent implements OnInit {
     {name: 'Fő oldal', img: '../../../assets/pluto.png'},
     {name: 'Személyek', img: '../../../assets/pluto.png'},
     {name: 'Készítő', img: '../../../assets/pluto.png'},
-    {name: 'Plusz 1', img: '../../../assets/pluto.png'},
+    {name: 'Bejelentkezés', img: '../../../assets/pluto.png'},
   ];
 
   constructor() {

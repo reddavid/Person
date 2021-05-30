@@ -19,6 +19,17 @@
       <mat-icon>fingerprint</mat-icon>
       Készítő
     </button>
+    <button mat-button [routerLink]="'/login'" *ngIf="!belepve; else kilepes">
+      <mat-icon>login</mat-icon>
+      Belépés
+    </button>
+    <ng-template #kilepes>
+      <button mat-button (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        Kijelentkezés
+      </button>
+    </ng-template>
+
   </mat-toolbar>
 </div>
 <router-outlet></router-outlet>

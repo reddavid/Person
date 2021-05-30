@@ -4,11 +4,14 @@ import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from './components/home/home.component';
 import {ListPersonComponent} from './components/list-person/list-person.component';
 import {CreatorComponent} from './components/creator/creator.component';
+import {LoginComponent} from './components/login/login.component';
+import {AuthService} from './services/auth.service';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'list-person', component: ListPersonComponent },
-  { path: 'creator', component: CreatorComponent }
+  { path: 'list-person', component: ListPersonComponent, canActivate: [AuthService] },
+  { path: 'creator', component: CreatorComponent },
+  { path: 'login', component: LoginComponent }
 ];
 
 

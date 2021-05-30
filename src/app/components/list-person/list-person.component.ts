@@ -6,6 +6,8 @@ import {AngularFirestore} from '@angular/fire/firestore';
 import {MatDialog} from '@angular/material/dialog';
 import {EditPersonComponent} from '../edit-person/edit-person.component';
 import {AddPersonComponent} from '../add-person/add-person.component';
+import {PersonService} from '../../services/person.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-list-person',
@@ -17,10 +19,12 @@ export class ListPersonComponent {
   title = 'Person';
   displayedColumns: string[] = ['name', 'telecom', 'gender', 'birthdate', 'address', 'actions'];
   dataSource: MatTableDataSource<Person>;
+  belepve: boolean;
 
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor(private afs: AngularFirestore, public dialog: MatDialog) {
+  constructor(private afs: AngularFirestore, public dialog: MatDialog, public personService: PersonService, private router: Router) {
+    this.personService.userStatus.subscribe(belep => this.belepve = belep);
     this.afs.collection<Person>('Person').valueChanges({idField: 'id'}).subscribe(data => {
       this.dataSource = new MatTableDataSource(data);
       this.dataSource.sort = this.sort;
@@ -59,6 +63,11 @@ export class ListPersonComponent {
     this.dialog.open(AddPersonComponent, {
       width: '350px'
     });
+  }
+
+  logout(): void {
+    this.personService.logout();
+    this.router.navigateByUrl('/home');
   }
 
 }

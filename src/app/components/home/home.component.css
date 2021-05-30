@@ -1,6 +1,6 @@
-.mat-card {
+mat-card {
   background: mediumpurple;
-  margin: 5px; padding: 5px;
+  margin: 30px;
+  justify-content: center;
+  color: white;
 }
-
-

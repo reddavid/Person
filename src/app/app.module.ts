@@ -17,7 +17,7 @@ import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
 import {environment} from '../environments/environment';
 import { EditPersonComponent } from './components/edit-person/edit-person.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AddPersonComponent } from './components/add-person/add-person.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './components/home/home.component';
@@ -26,6 +26,7 @@ import { CreatorComponent } from './components/creator/creator.component';
 import {MatCardModule} from '@angular/material/card';
 import {RouterModule} from '@angular/router';
 import {MatMenuModule} from '@angular/material/menu';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -35,29 +36,31 @@ import {MatMenuModule} from '@angular/material/menu';
     AddPersonComponent,
     HomeComponent,
     ListPersonComponent,
-    CreatorComponent
+    CreatorComponent,
+    LoginComponent
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule,
-    MatDialogModule,
-    MatButtonModule,
-    MatInputModule,
-    MatIconModule,
-    MatSortModule,
-    MatCardModule,
-    MatTableModule,
-    MatToolbarModule,
-    MatPaginatorModule,
-    FormsModule,
-    AppRoutingModule,
-    RouterModule,
-    BrowserModule,
-    FormsModule,
-    MatMenuModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        AngularFireModule.initializeApp(environment.firebase),
+        AngularFirestoreModule,
+        MatDialogModule,
+        MatButtonModule,
+        MatInputModule,
+        MatIconModule,
+        MatSortModule,
+        MatCardModule,
+        MatTableModule,
+        MatToolbarModule,
+        MatPaginatorModule,
+        FormsModule,
+        AppRoutingModule,
+        RouterModule,
+        BrowserModule,
+        FormsModule,
+        MatMenuModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [AppComponent],
   entryComponents: [EditPersonComponent]
